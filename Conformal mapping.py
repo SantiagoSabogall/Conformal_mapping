@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def conformal_map(z):
-    return 1/z #Define the complex function
+    return  - 1 / z**2    #Define the complex function
 
 # Define the points of the region to be transformed(Straight line)
 
@@ -23,8 +23,7 @@ fig, ax = plt.subplots(1, 2, figsize=(12, 6))
 
 ax[0].plot(points.real,points.imag, 'bo-')
 ax[0].set_title('z-plane')
-ax[0].set_xlim(-10, 10) # You can fix the figure boundaries depending on the size of the mapping 
-ax[0].set_ylim(-10, 10)
+ax[0].autoscale()
 ax[0].set_xlabel('x')
 ax[0].set_ylabel('y')
 ax[0].grid(True)
@@ -32,8 +31,7 @@ ax[0].grid(True)
     
 ax[1].plot(mapped_points.real, mapped_points.imag, 'ro-')
 ax[1].set_title('w-plane')
-ax[1].set_xlim(-10, 10)
-ax[1].set_ylim(-10, 10)
+ax[1].autoscale()
 ax[1].set_xlabel('u')
 ax[1].set_ylabel('v')
 ax[1].grid(True)
